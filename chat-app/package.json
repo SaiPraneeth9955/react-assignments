@@ -1,0 +1,20 @@
+{
+  "name": "react-chat-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "React chat app with likes, emoji, @mentions and a socket.io server",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c magenta,cyan \"npm run dev -w server\" \"npm run dev -w client\"",
+    "client": "npm run dev -w client",
+    "server": "npm run dev -w server",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
